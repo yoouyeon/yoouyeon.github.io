@@ -75,6 +75,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-programmers-72410" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/programmers-72410/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T14:38:32.000Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Daily-Coding/">Daily Coding</a>►<a class="article-category-link" href="/categories/Daily-Coding/Programmers/">Programmers</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/programmers-72410/">programmers 72410</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://programmers.co.kr/learn/courses/30/lessons/72410"><strong>문제 링크</strong></a></p>
+<hr>
+<h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>신규 유저가 입력한 아이디를 나타내는 new_id가 매개변수로 주어질 때, “네오”가 설계한 7단계의 처리 과정을 거친 후의 추천 아이디를 return 하도록 solution 함수를 완성해 주세요.</p>
+<p><strong>[7단계의 처리 과정]</strong></p>
+<ul>
+<li>1단계: new_id의 모든 대문자를 대응되는 소문자로 치환합니다.</li>
+<li>2단계: new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.</li>
+<li>3단계: new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.</li>
+<li>4단계: new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.</li>
+<li>5단계: new_id가 빈 문자열이라면, new_id에 “a”를 대입합니다.</li>
+<li>6단계: new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.<br>   만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.</li>
+<li>7단계: new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.</li>
+</ul>
+<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>string의 함수들을 잘 사용해서 문제의 조건들을 단계별로 구현해주면 되는 문제였다.<br>별도로 생각해 줄 것 없이 문제 그대로만 잘 구현하면 해결이 되는 문제라 string 관련 함수들만 잘 알고 있다면 무리없이 풀 수 있는 문제이다.<br>사용한 함수들이 궁금하다면 <a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/string/basic_string/">여기</a></p>
+<h1 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">solution</span><span class="params">(string new_id)</span> </span>&#123;</span><br><span class="line">    string answer = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//step 1: 대문자를 소문자로 치환</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; new_id.<span class="built_in">length</span>(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new_id[i] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; new_id[i] &lt;= <span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">            new_id[i] = <span class="built_in">tolower</span>(new_id[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//step 2: 소문자, 숫자, 빼기, 밑줄, 마침표만 answer에 추가</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; new_id.<span class="built_in">length</span>(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>((new_id[i] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; new_id[i] &lt;= <span class="string">&#x27;z&#x27;</span>) || (new_id[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; new_id[i] &lt;= <span class="string">&#x27;9&#x27;</span>) || new_id[i] == <span class="string">&#x27;-&#x27;</span> || new_id[i] == <span class="string">&#x27;_&#x27;</span> || new_id[i] == <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">            answer.<span class="built_in">push_back</span>(new_id[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//step 3: 마침표가 2번 이상 연속되면 하나 지우기</span></span><br><span class="line">    i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; answer.<span class="built_in">length</span>())&#123;</span><br><span class="line">        <span class="keyword">if</span> (answer[i - <span class="number">1</span>] == <span class="string">&#x27;.&#x27;</span> &amp;&amp; answer[i] == <span class="string">&#x27;.&#x27;</span>)&#123;</span><br><span class="line">            answer.<span class="built_in">erase</span>(answer.<span class="built_in">begin</span>() + i);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//step 4: 처음과 끝의 마침표 제거하기</span></span><br><span class="line">    <span class="keyword">if</span>(answer[<span class="number">0</span>] == <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">        answer.<span class="built_in">erase</span>(answer.<span class="built_in">begin</span>());</span><br><span class="line">    <span class="keyword">if</span>(answer[answer.<span class="built_in">length</span>() - <span class="number">1</span>] == <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">        answer.<span class="built_in">erase</span>(answer.<span class="built_in">end</span>() - <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//step 5: 빈 문자열이라면 &quot;a&quot; 대입하기</span></span><br><span class="line">    <span class="keyword">if</span>(answer.<span class="built_in">length</span>() == <span class="number">0</span>)</span><br><span class="line">        answer.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="comment">//step 6: 길이가 16 이상이면 16번째 문자부터 끝까지 제거하기 (제거 후 끝 마침표 제거)</span></span><br><span class="line">    <span class="keyword">if</span>(answer.<span class="built_in">length</span>() &gt;= <span class="number">16</span>)&#123;</span><br><span class="line">        answer.<span class="built_in">erase</span>(answer.<span class="built_in">begin</span>() + <span class="number">15</span>, answer.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">if</span>(answer[answer.<span class="built_in">length</span>() - <span class="number">1</span>] == <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">            answer.<span class="built_in">erase</span>(answer.<span class="built_in">end</span>() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//step 7: 길이가 2 이하라면 길이가 3이 될때까지 마지막 문자 붙이기</span></span><br><span class="line">    <span class="keyword">if</span>(answer.<span class="built_in">length</span>() &lt;= <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">char</span> c = answer[answer.<span class="built_in">length</span>() - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">while</span>(answer.<span class="built_in">length</span>() != <span class="number">3</span>)&#123;</span><br><span class="line">            answer.<span class="built_in">push_back</span>(c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yoouyeon.github.io/2021/03/30/programmers-72410/" data-id="ckmw4rph10000adod73sp1qjs" data-title="programmers 72410" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DailyCoding/" rel="tag">DailyCoding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Programmers/" rel="tag">Programmers</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-42-seoul-la-piscine-review-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/30/42-seoul-la-piscine-review-2/" class="article-date">
@@ -329,7 +388,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/42-Seoul/">42 Seoul</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/42-Seoul/La-piscine/">La piscine</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/42-Seoul/">42 Seoul</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/42-Seoul/La-piscine/">La piscine</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Daily-Coding/">Daily Coding</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily-Coding/Programmers/">Programmers</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -339,7 +398,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/42Seoul/" rel="tag">42Seoul</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/La-piscine/" rel="tag">La piscine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%EC%A0%9C%EB%90%98%EC%A7%80%EC%95%8A%EC%9D%80%EC%9D%B4%EC%95%BC%EA%B8%B0%EB%93%A4/" rel="tag">정제되지않은이야기들</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/42Seoul/" rel="tag">42Seoul</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DailyCoding/" rel="tag">DailyCoding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/La-piscine/" rel="tag">La piscine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Programmers/" rel="tag">Programmers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%EC%A0%9C%EB%90%98%EC%A7%80%EC%95%8A%EC%9D%80%EC%9D%B4%EC%95%BC%EA%B8%B0%EB%93%A4/" rel="tag">정제되지않은이야기들</a></li></ul>
     </div>
   </div>
 
@@ -349,7 +408,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그 클라우드</h3>
     <div class="widget tagcloud">
-      <a href="/tags/42Seoul/" style="font-size: 20px;">42Seoul</a> <a href="/tags/La-piscine/" style="font-size: 20px;">La piscine</a> <a href="/tags/%EC%A0%95%EC%A0%9C%EB%90%98%EC%A7%80%EC%95%8A%EC%9D%80%EC%9D%B4%EC%95%BC%EA%B8%B0%EB%93%A4/" style="font-size: 10px;">정제되지않은이야기들</a>
+      <a href="/tags/42Seoul/" style="font-size: 20px;">42Seoul</a> <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/DailyCoding/" style="font-size: 10px;">DailyCoding</a> <a href="/tags/La-piscine/" style="font-size: 20px;">La piscine</a> <a href="/tags/Programmers/" style="font-size: 10px;">Programmers</a> <a href="/tags/%EC%A0%95%EC%A0%9C%EB%90%98%EC%A7%80%EC%95%8A%EC%9D%80%EC%9D%B4%EC%95%BC%EA%B8%B0%EB%93%A4/" style="font-size: 10px;">정제되지않은이야기들</a>
     </div>
   </div>
 
@@ -369,6 +428,10 @@
     <h3 class="widget-title">최근 포스트</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/30/programmers-72410/">programmers 72410</a>
+          </li>
         
           <li>
             <a href="/2021/03/30/42-seoul-la-piscine-review-2/">🏊‍♀️ 42서울 라피신 후기(2)</a>
