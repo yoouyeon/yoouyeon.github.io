@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Libft(2) - Yoou&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yoou&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon-16x16.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yoou&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Libft Part 2."><meta property="og:type" content="blog"><meta property="og:title" content="Libft(2)"><meta property="og:url" content="https://yoouyeon.github.io/2021/05/14/Libft-2/"><meta property="og:site_name" content="Yoou&#039;s Blog"><meta property="og:description" content="Libft Part 2."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://yoouyeon.github.io/thumnails/42%20Seoul.png"><meta property="article:published_time" content="2021-05-13T16:32:41.000Z"><meta property="article:modified_time" content="2021-05-18T02:37:32.852Z"><meta property="article:author" content="Yoou"><meta property="article:tag" content="42Seoul"><meta property="article:tag" content="Libft"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/thumnails/42%20Seoul.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoouyeon.github.io/2021/05/14/Libft-2/"},"headline":"Libft(2)","image":["https://yoouyeon.github.io/thumnails/42%20Seoul.png"],"datePublished":"2021-05-13T16:32:41.000Z","dateModified":"2021-05-18T02:37:32.852Z","author":{"@type":"Person","name":"Yoou"},"description":"Libft Part 2."}</script><link rel="canonical" href="https://yoouyeon.github.io/2021/05/14/Libft-2/"><link rel="icon" href="/img/favicon-16x16.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-8DZHNCJ0K6" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-8DZHNCJ0K6');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Yoou&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoouyeon"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is--tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/thumnails/42%20Seoul.png" alt="Libft(2)"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2021-05-13T16:32:41.000Z" title="2021. 5. 14. 오전 1:32:41">2021-05-14</time></span><span class="level-item"><a class="link-muted" href="/categories/42-Seoul/">42 Seoul</a></span></div></div><h1 class="title is-3 is-size-4-mobile">Libft(2)</h1><div class="content"><p>Libft Part 2.</p>
+<span id="more"></span>
+
+<h2 id="protect-vs-not-protect"><a href="#protect-vs-not-protect" class="headerlink" title="protect vs. not-protect"></a>protect vs. not-protect</h2><p>part2에서 구현해야 하는 함수들은 특별히 원 함수가 있는 것이 아니라 특정한 기능을 수행하는 나만의 함수들을 구현하는 것이기 때문에 에러 입력에 관한 처리도 구현하는 사람 취향에 맞게 구현하면 된다.</p>
+<p>이게 일반적인 용어인지, 아니면 Libft 테스터인 unit-test에서 임의로 만든 개념인지 모르겠지만(null protected function이라고 검색해 봤을 때 특별히 나오는 결과가 없어 보임) 포인터를 매개변수로 받는 함수에서 null포인터가 들어왔을 때 처리하는 방법에 따라서 protect, not-protect로 구분한다는 것 같다.</p>
+<ul>
+<li>null이 매개변수로 들어왔을 때 segment fault, bus error… 등의 에러를 뱉어내면 not-protect된 함수</li>
+<li>null이 매개변수로 들어왔을 때 null을 반환한다던가 해서 비정상적인 종료를 막으면 protect 된 함수</li>
+</ul>
+<p>처음에는 비정상적인 입력이 들어오면 함수를 비정상적으로 종료해서 사용자에게 이 입력이 비정상적임을 알리고 함수 진행을 중단해야 한다고 생각해서 protect를 안하는 쪽으로 part 2의 함수들을 구현했었는데</p>
+<p>잘못된 입력이 들어왔을때 함수 실행을 완전히 중단해 버렸을 때 오는 피해가 잘못된 입력에서 오는 피해보다 더 클 수도 있다는 다른 분의 말씀에 설득되어 버려서…ㅎㅎ 다시 protect를 하는 쪽으로 모두 수정했다.</p>
+<p>이 부분은 디펜스를 잘 할 수만 있다면 자신이 원하는 방향으로 구현을 하면 될 것 같다..!</p>
+<h2 id="ft-substr"><a href="#ft-substr" class="headerlink" title="ft_substr"></a>ft_substr</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">ft_substr</span><span class="params">(<span class="keyword">char</span> <span class="keyword">const</span> *s, <span class="keyword">unsigned</span> <span class="keyword">int</span> start, <span class="keyword">size_t</span> len)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>s문자열의 start인덱스에서부터 최대 len바이트를 뽑아서(?) 새로운 부분 문자열을 만들고, 그 문자열의 시작 주소 반환하기</p>
+<h3 id="예외-처리"><a href="#예외-처리" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p><strong>s가 null일 경우</strong></p>
+<p>처리할 수 있는 문자열이 없으므로 null을 반환한다.</p>
+</li>
+<li><p><strong>s의 길이가 start보다 작거나 같은 경우 || len == 0 인 경우</strong></p>
+<p>처리는 가능하지만 유의미한 문자열을 생성할 수는 없기 때문에 빈 문자열을 반환한다.</p>
+</li>
+<li><p><strong>malloc이 실패한 경우</strong></p>
+<p>null을 반환한다.</p>
+</li>
+</ol>
+<h3 id="함수-진행-과정"><a href="#함수-진행-과정" class="headerlink" title="함수 진행 과정"></a>함수 진행 과정</h3><ol>
+<li>예외사항 (1, 2) 처리</li>
+<li><code>slen</code>(s 문자열의 길이)를 구해준 후에 <code>min(len, slen - start) + 1</code>만큼의 메모리 할당</li>
+<li><code>s 문자열이 끝나기 전 ||복사한 문자의 개수가 len개 이하</code> 까지 문자 복사해 넣기</li>
+<li>마지막 인덱스에 null 문자 넣어주기</li>
+</ol>
+<h3 id="구현-시-고려사항"><a href="#구현-시-고려사항" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li><p>min(len, slen - start)의 이유</p>
+<p>len이 부분문자열의 최대길이이기 때문이다.</p>
+<p>만약 생성할 수 있는 문자열의 길이가 len보다 작은 경우에는 그만큼만 할당해서 문자열을 생성해야 한다.</p>
+<p>사실 비교하지 않고 넉넉하게 len만큼만 할당해줘도 통과하는 것 같긴 하던데 나는 뭔가 여유롭게 할당해주는게 조금 신경쓰여서… 불필요한 과정이었다 해도 어쩔 수 없다!! ㅎㅎ</p>
+</li>
+<li><p>s문자열의 내용을 새로운 문자열에 복사하는 형태이므로 ft_strlcpy를 활용하면 보다 깔끔한 코드를 짤 수 있을 것 같다는 생각을 했다.</p>
+</li>
+</ol>
+<h2 id="ft-strjoin"><a href="#ft-strjoin" class="headerlink" title="ft_strjoin"></a>ft_strjoin</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">ft_strjoin</span><span class="params">(<span class="keyword">char</span> <span class="keyword">const</span> *s1, <span class="keyword">char</span> <span class="keyword">const</span> *s2)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>s1 문자열 뒤에 s2 문자열을 붙인 형태의 문자열을 생성해서 반환한다.</p>
+<h3 id="예외-처리-1"><a href="#예외-처리-1" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p><strong>s1과 s2 모두 null일 경우</strong></p>
+<p>처리할 수 있는 문자열이 없으므로 null을 반환한다.</p>
+</li>
+<li><p><strong>s1만 null인 경우</strong></p>
+<p>s2만 복제해서 반환한다.</p>
+</li>
+<li><p><strong>s2만 null인 경우</strong></p>
+<p>s1만 복제해서 반환한다.</p>
+</li>
+<li><p><strong>malloc 실패한 경우</strong></p>
+<p>null을 반환한다. </p>
+<h3 id="함수-진행-과정-1"><a href="#함수-진행-과정-1" class="headerlink" title="함수 진행 과정"></a>함수 진행 과정</h3></li>
+<li><p>예외 상황 (1, 2, 3) 처리</p>
+</li>
+<li><p>s1과 s2의 길이를 잰다. (with <code>ft_strlen</code>)</p>
+</li>
+<li><p>(s1의 길이 + s2의 길이 + 1)만큼의 메모리를 할당해 준다.</p>
+</li>
+<li><p>할당한 메모리에 s1을 복사한다. (with <code>ft_strlcpy</code>)</p>
+</li>
+<li><p>그 뒤에 s2를 붙인다. (with <code>ft_strlcat</code>)</p>
+</li>
+</ol>
+<h3 id="구현-시-고려사항-1"><a href="#구현-시-고려사항-1" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li><p>문제에서도 언급되었듯이 part 1에서 구현해 둔 함수를 part 2에서 활용할 수 있다. </p>
+<p>문자열을 복사하는 과정은 <code>ft_strlcpy</code>로 대체할 수 있고 문자열을 붙이는 과정은 <code>ft_strlcat</code>으로 대체할 수 있다. </p>
+<p>평가를 다니다 보면 코드가 길어져서 가독성이 떨어진다는 고민을 하는 동료들이 많았는데 과제의 목적을 잘 기억해서 중복되는 코드를 작성하지 않게 하면 보다 효율적인 코드를 작성할 수 있을 것 같다.</p>
+</li>
+<li><p><code>ft_strlcat</code>과 <code>ft_strlcpy</code>의 마지막 매개변수에 주의하자.</p>
+<p><code>ft_strlcat</code>의 마지막 매개변수는 **함수가 반환할 문자열의 길이 + 1 (null 문자 크기)**이다. 따라서 (s1의 길이 + s2의 길이 + 1)을 매개변수로 전달해주었다.</p>
+<p><code>ft_strlcpy</code>의 마지막 매개변수는 **복사할 문자의 개수 + 1 (null 문자 크기)**이다. 따라서 (s1의 길이 + 1)을 매개변수로 전달해주었다.</p>
+</li>
+</ol>
+<h2 id="ft-strtrim"><a href="#ft-strtrim" class="headerlink" title="ft_strtrim"></a>ft_strtrim</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">ft_strtrim</span><span class="params">(<span class="keyword">char</span> <span class="keyword">const</span> *s1, <span class="keyword">char</span> <span class="keyword">const</span> *<span class="built_in">set</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>s1의 앞, 뒤에서 set에 포함되어 있는 문자들을 모두 제거한 형태의 문자열을 생성하여 반환한다.</p>
+<p>예) s1: “aabcdabdcaab” set: “ab” =&gt; “cdbabdc”</p>
+<h3 id="예외-처리-2"><a href="#예외-처리-2" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p><strong>s1이 null일 경우</strong></p>
+<p>처리할 문자열이 없으므로 null을 반환한다.</p>
+</li>
+<li><p><strong>set이 null일 경우</strong></p>
+<p>제거할 문자가 없으므로 s1을 복제하여 반환한다</p>
+</li>
+<li><p><strong>s1의 모든 문자가 set에 포함된 경우</strong></p>
+<p>s1의 모든 문자가 제거되므로 빈 문자열을 반환한다.</p>
+</li>
+<li><p><strong>malloc 실패할 경우</strong></p>
+<p>null을 반환한다.</p>
+</li>
+</ol>
+<h3 id="함수-진행-과정-2"><a href="#함수-진행-과정-2" class="headerlink" title="함수 진행 과정"></a>함수 진행 과정</h3><ol>
+<li>예외 상황 (1, 2) 처리</li>
+<li>s1 문자열의 시작과 끝으로 시작 포인터 (start), 끝 포인터 (end) 설정</li>
+<li>문자열의 앞에서 set에 포함된 문자가 등장하지 않을 때 까지 start 이동시키기</li>
+<li>예외 상황 (3) 처리</li>
+<li>문자열의 뒤에서 set에 포함된 문자가 등장하지 않을 때 까지 end 이동시키기</li>
+<li>문자열의 길이 계산하고 (<code>len = end - start + 1</code>) 메모리 할당하기</li>
+<li>할당한 공간에 start부터 len만큼의 문자 복사하기 (with <code>ft_strlcpy</code>)</li>
+</ol>
+<h3 id="구현-시-고려사항-2"><a href="#구현-시-고려사항-2" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li><p>모든 문자가 삭제되는 상황 파악하기</p>
+<p>처음에는 start &gt; end 인 상황에서 모든 문자가 삭제됨을 확인하고 빈 문자열을 반환하는 방법을 했었는데 실제로 모든 문자가 삭제되는 상황에서 자꾸 abort가 떠서 원인을 찾아보았더니 문제는 end를 움직이는 상황에서 end를 포인터를 이용해서 움직이다보니 end가 문장 끝(문장의 시작부분)을 넘어가는 상황에서 반복을 멈추지 못하는 것이었다. </p>
+<p>길이를 먼저 재서 길이를 줄여가면서 모든 문자가 삭제되었는지 확인해보는 등 여러가지 방법을 생각해보긴 했었는데 start를 움직이는데 있어서는 문제가 없었기 때문에 그냥 start를 움직인 다음에 모든 문자가 삭제되었는지 (start가 null에 도달했는지)를  확인해 본 후에 end를 움직이는 것이 가장 간단하게 확인할 수 있는 방법이었다. </p>
+</li>
+<li><p>함수의 기능을 이해하는데 어려움이 있었다. set에 포함된 문자들을 모두 s1에서 제거하는 것이 아니라 앞 뒤에 있는 문자들 (set에 포함되어 있지 않은 문자 안쪽에 있는 문자는 고려할 필요가 없음)만 제거하면 되는 것이다. (위에 적어둔 예시 참고)</p>
+</li>
+</ol>
+<h2 id="ft-split"><a href="#ft-split" class="headerlink" title="ft_split"></a>ft_split</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> **<span class="title">ft_split</span><span class="params">(<span class="keyword">char</span> <span class="keyword">const</span> *s, <span class="keyword">char</span> c)</span></span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>s 문자열을 c 문자열을 기준으로 나누어서 만들어진 문자열의 배열을 반환하기.</p>
+<h3 id="예외-처리-3"><a href="#예외-처리-3" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p><strong>s가 null인 경우</strong></p>
+<p>null을 반환한다.</p>
+</li>
+<li><p><strong>문자열 배열의 메모리 할당이 실패한 경우</strong></p>
+<p>null을 반환한다.</p>
+</li>
+<li><p><strong>문자열의 메모리 할당이 실패한 경우</strong></p>
+<p>그동안 할당해 준 메모리들을 모두 해제해 준 다음에 null을 반환한다. (<code>all_free</code> 함수)</p>
+</li>
+</ol>
+<h3 id="함수-진행-과정-3"><a href="#함수-진행-과정-3" class="headerlink" title="함수 진행 과정"></a>함수 진행 과정</h3><ol>
+<li>예외 상황(1) 처리</li>
+<li>만들어질 문자열의 개수를 세어준다 (<code>get_cnt_strs</code>)<ol>
+<li>s에서 c가 등장하지 않을 때까지 인덱스를 이동시킨다.</li>
+<li>c가 아닌 문자가 등장한 경우 cnt를 늘려주고 c가 등장하지 않을 때까지 인덱스를 이동시킨다. (한 문자열)</li>
+<li>c가 등장한 경우 인덱스를 1 증가시킨다.</li>
+</ol>
+</li>
+<li>(문자열의 개수 + 1) * sizeof(char *) 만큼의 메모리를 할당한다. (예외 상황 (2) 처리)</li>
+<li>문자열의 개수만큼 문자열을 생성하여 문자열 배열에 넣어준다. (with <code>get_str</code>)<ol>
+<li>문자열의 시작 포인터와 문자열의 길이를 전달하여 새로운 문자열의 시작 포인터와 문자열의 길이를 반환받는다.</li>
+<li>예외상황 (3) 처리</li>
+<li>문자열을 붙여넣는다. (with <code>ft_strlcpy</code>)</li>
+</ol>
+</li>
+<li>배열의 마지막은 null로 마무리한다.</li>
+</ol>
+<h3 id="구현-시-고려사항-3"><a href="#구현-시-고려사항-3" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li>피신 때도 비슷한 문제가 있었는데 그때 코드를 활용하니 함수 줄 제한을 지키는 데에 어려움이 있어서 다른 분의 코드를 참고했다. 어떤 곳에서 함수를 정의해주느냐가 관건인 것 같다.</li>
+</ol>
+<h2 id="ft-itoa"><a href="#ft-itoa" class="headerlink" title="ft_itoa"></a>ft_itoa</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">ft_itoa</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>int로 주어지는 숫자를 문자열로 변환해준다.</p>
+<h3 id="예외-처리-4"><a href="#예외-처리-4" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>malloc이 실패할 경우</p>
+<p>null을 반환한다.</p>
+</li>
+</ol>
+<h3 id="코드-진행-과정"><a href="#코드-진행-과정" class="headerlink" title="코드 진행 과정"></a>코드 진행 과정</h3><p>&lt;추가예정&gt;</p>
+<ol>
+<li>부호 판단하기</li>
+<li>절댓값 계산하기</li>
+<li>문자열의 길이 계산하기</li>
+<li>뒤에서부터 차례로 숫자 넣어주기 (10으로 나눈 나머지)</li>
+<li>음수일 경우 인덱스 0 자리에 - 넣어주고 양수일 경우에는 나머지 숫자 넣어주기</li>
+</ol>
+<h3 id="구현-시-고려사항-4"><a href="#구현-시-고려사항-4" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li><p>int형 변수들을 처리할 때는 음수 최댓값의 절댓값이 양수 최댓값보다 크다는 사실을 꼭 기억하고 있어야 한다. </p>
+<p>음수 최댓값이 양수 최댓값의 범위를 벗어나는 것을 고려해서 절댓값은 unsigned int 형으로 저장했다.</p>
+</li>
+<li><p>문자열의 길이를 생각할 때에 음수는 앞에 ‘-‘가 들어가야 하기 때문에 문자열의 길이가 1부터 시작한다는 점을 기억해두어야 한다. </p>
+</li>
+</ol>
+<h2 id="ft-strmapi"><a href="#ft-strmapi" class="headerlink" title="ft_strmapi"></a>ft_strmapi</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">ft_strmapi</span><span class="params">(<span class="keyword">char</span> <span class="keyword">const</span> *s, <span class="keyword">char</span> (*f)(<span class="keyword">unsigned</span> <span class="keyword">int</span>, <span class="keyword">char</span>))</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>s 문자열의 각각의 문자에 함수 포인터로 주어지는 함수 f를 적용한 새로운 문자열을 반환하기</p>
+<h3 id="예외-처리-5"><a href="#예외-처리-5" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>s 또는 f가 null인 경우</p>
+<p>문자열을 처리 할 방법이 없으므로 null을 반환한다.</p>
+</li>
+<li><p>malloc 실패한 경우</p>
+<p>null을 반환한다.</p>
+</li>
+</ol>
+<h3 id="코드-진행-과정-1"><a href="#코드-진행-과정-1" class="headerlink" title="코드 진행 과정"></a>코드 진행 과정</h3><ol>
+<li>예외 상황 (1) 처리</li>
+<li>(문자열 길이 + 1)만큼 메모리 할당 (예외 상황 (2) 처리)</li>
+<li>문자열의 문자 각각에 f 적용해주기</li>
+<li>문자열 끝에 null 종료해주기</li>
+</ol>
+<h3 id="구현-시-고려사항-5"><a href="#구현-시-고려사항-5" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li>f의 매개변수에 대한 자세한 설명이 없어서 unsigned int 로 받는 매개변수 i가 무슨 의미인지 궁금했는데 결국에는 다른 분들의 코드를 보고 인덱스에 해당하는 것이구나.. 하는 것을 알게 되었다.<h2 id="ft-putchar-fd"><a href="#ft-putchar-fd" class="headerlink" title="ft_putchar_fd"></a>ft_putchar_fd</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ft_putchar_fd</span><span class="params">(<span class="keyword">char</span> c, <span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
+fd 로 주어지는 파일에 문자 c 출력하기</li>
+</ol>
+<h3 id="예외-처리-6"><a href="#예외-처리-6" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>fd가 음수일 경우</p>
+<p>출력하지 않고 반환한다.</p>
+</li>
+</ol>
+<h3 id="구현-시-고려사항-6"><a href="#구현-시-고려사항-6" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li><p>fd가 음수일 경우를 고려해 주어야 한다.</p>
+<p>파일 디스크립터는 모두 0 또는 양의 정수인줄 알았는데 파일 open이 정상적으로 되지 않았을 경우에는 파일 디스크립터가 음수도 나올 수 있다고 한다. fd가 음수일 경우에는 write에서 오류가 생기므로 (쓸 파일이 정상적으로 열리지 않았기 때문에) 출력하지 않고 그대로 반환해주어야 한다. </p>
+</li>
+</ol>
+<h2 id="ft-putstr-fd"><a href="#ft-putstr-fd" class="headerlink" title="ft_putstr_fd"></a>ft_putstr_fd</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ft_putstr_fd</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>fd로 주어지는 파일에 문자열 s 출력하기</p>
+<h3 id="예외-처리-7"><a href="#예외-처리-7" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>s가 null이거나 fd가 음수인 경우</p>
+<p>출력이 불가능하므로 그냥 반환한다.</p>
+</li>
+</ol>
+<h2 id="ft-putendl-fd"><a href="#ft-putendl-fd" class="headerlink" title="ft_putendl_fd"></a>ft_putendl_fd</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ft_putendl_fd</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>fd 로 주어지는 파일에 문자열 s 를 출력하고 개행 출력하기</p>
+<h3 id="예외-처리-8"><a href="#예외-처리-8" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>s가 null이거나 fd가 음수인 경우</p>
+<p>출력이 불가능하므로 그냥 반환한다.</p>
+</li>
+</ol>
+<h2 id="ft-putnbr-fd"><a href="#ft-putnbr-fd" class="headerlink" title="ft_putnbr_fd"></a>ft_putnbr_fd</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ft_putnbr_fd</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="예외-처리-9"><a href="#예외-처리-9" class="headerlink" title="예외 처리"></a>예외 처리</h3><ol>
+<li><p>fd가 음수일 경우</p>
+<p>출력하지 않고 반환한다.</p>
+</li>
+</ol>
+<h3 id="구현-시-고려사항-7"><a href="#구현-시-고려사항-7" class="headerlink" title="구현 시 고려사항"></a>구현 시 고려사항</h3><ol>
+<li>itoa를 사용하면 좀 더 깔끔한 코드를 짤 수 있었을 것 같은데 허용 함수에 free가 없어서 메모리 leak 발생으로 itoa를 사용할 수 없었다… 하하</li>
+</ol>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/42Seoul/">42Seoul</a><a class="link-muted mr-2" rel="tag" href="/tags/Libft/">Libft</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/05/11/Libft-1/"><span class="level-item">Libft (1)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="yoouyeon/blog-comment" issue-term="title" theme="github-light" crossorigin="anonymous" async></script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#protect-vs-not-protect"><span class="level-left"><span class="level-item">1</span><span class="level-item">protect vs. not-protect</span></span></a></li><li><a class="level is-mobile" href="#ft-substr"><span class="level-left"><span class="level-item">2</span><span class="level-item">ft_substr</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#함수-진행-과정"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">함수 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-strjoin"><span class="level-left"><span class="level-item">3</span><span class="level-item">ft_strjoin</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-1"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#함수-진행-과정-1"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">함수 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-1"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-strtrim"><span class="level-left"><span class="level-item">4</span><span class="level-item">ft_strtrim</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-2"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#함수-진행-과정-2"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">함수 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-2"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-split"><span class="level-left"><span class="level-item">5</span><span class="level-item">ft_split</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-3"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#함수-진행-과정-3"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">함수 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-3"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-itoa"><span class="level-left"><span class="level-item">6</span><span class="level-item">ft_itoa</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-4"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#코드-진행-과정"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">코드 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-4"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-strmapi"><span class="level-left"><span class="level-item">7</span><span class="level-item">ft_strmapi</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-5"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#코드-진행-과정-1"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">코드 진행 과정</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-5"><span class="level-left"><span class="level-item">7.3</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-putchar-fd"><span class="level-left"><span class="level-item">8</span><span class="level-item">ft_putchar_fd</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-6"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-6"><span class="level-left"><span class="level-item">8.2</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-putstr-fd"><span class="level-left"><span class="level-item">9</span><span class="level-item">ft_putstr_fd</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-7"><span class="level-left"><span class="level-item">9.1</span><span class="level-item">예외 처리</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-putendl-fd"><span class="level-left"><span class="level-item">10</span><span class="level-item">ft_putendl_fd</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-8"><span class="level-left"><span class="level-item">10.1</span><span class="level-item">예외 처리</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ft-putnbr-fd"><span class="level-left"><span class="level-item">11</span><span class="level-item">ft_putnbr_fd</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#예외-처리-9"><span class="level-left"><span class="level-item">11.1</span><span class="level-item">예외 처리</span></span></a></li><li><a class="level is-mobile" href="#구현-시-고려사항-7"><span class="level-left"><span class="level-item">11.2</span><span class="level-item">구현 시 고려사항</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpeg" alt="Yoou"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yoou</p><p class="is-size-6 is-block">나는야 개발자</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seongnam, Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/42-Seoul/"><span class="level-start"><span class="level-item">42 Seoul</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/42-Seoul/La-piscine/"><span class="level-start"><span class="level-item">La piscine</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Daily-Coding/"><span class="level-start"><span class="level-item">Daily Coding</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul><li><a class="level is-mobile" href="/categories/Daily-Coding/Programmers/"><span class="level-start"><span class="level-item">Programmers</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-13T16:32:41.000Z">2021-05-14</time></p><p class="title"><a href="/2021/05/14/Libft-2/">Libft(2)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-11T03:30:52.000Z">2021-05-11</time></p><p class="title"><a href="/2021/05/11/Libft-1/">Libft (1)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-23T11:38:49.000Z">2021-04-23</time></p><p class="title"><a href="/2021/04/23/42-seoul-la-piscine-review-3/">🏊‍♀️ 42서울 라피신 후기 (3)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a> / <a href="/categories/42-Seoul/La-piscine/">La piscine</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-01T16:58:05.000Z">2021-04-02</time></p><p class="title"><a href="/2021/04/02/programmers-70128/">(프로그래머스) 내적 (C++)</a></p><p class="categories"><a href="/categories/Daily-Coding/">Daily Coding</a> / <a href="/categories/Daily-Coding/Programmers/">Programmers</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-01T14:59:05.000Z">2021-04-01</time></p><p class="title"><a href="/2021/04/01/programmers-1845/">(프로그래머스) 폰켓몬 (C++)</a></p><p class="categories"><a href="/categories/Daily-Coding/">Daily Coding</a> / <a href="/categories/Daily-Coding/Programmers/">Programmers</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Yoou&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 Yoou</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoouyeon"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
