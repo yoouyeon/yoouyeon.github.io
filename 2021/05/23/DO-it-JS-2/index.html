@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기 - Yoou&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yoou&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon-16x16.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yoou&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편을 읽고, 공부하고, 정리한 글책 정보"><meta property="og:type" content="blog"><meta property="og:title" content="(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기"><meta property="og:url" content="https://yoouyeon.github.io/2021/05/23/DO-it-JS-2/"><meta property="og:site_name" content="Yoou&#039;s Blog"><meta property="og:description" content="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편을 읽고, 공부하고, 정리한 글책 정보"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://yoouyeon.github.io/thumnails/do%20it%20javascript.png"><meta property="article:published_time" content="2021-05-23T06:33:55.000Z"><meta property="article:modified_time" content="2021-05-23T17:27:08.403Z"><meta property="article:author" content="Yoou"><meta property="article:tag" content="Javascript"><meta property="article:tag" content="StudyWithBook"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/thumnails/do%20it%20javascript.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoouyeon.github.io/2021/05/23/DO-it-JS-2/"},"headline":"(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기","image":["https://yoouyeon.github.io/thumnails/do%20it%20javascript.png"],"datePublished":"2021-05-23T06:33:55.000Z","dateModified":"2021-05-23T17:27:08.403Z","author":{"@type":"Person","name":"Yoou"},"description":"Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편을 읽고, 공부하고, 정리한 글책 정보"}</script><link rel="canonical" href="https://yoouyeon.github.io/2021/05/23/DO-it-JS-2/"><link rel="icon" href="/img/favicon-16x16.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-8DZHNCJ0K6" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-8DZHNCJ0K6');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Yoou&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoouyeon"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is--tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/thumnails/do%20it%20javascript.png" alt="(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time datetime="2021-05-23T06:33:55.000Z" title="2021. 5. 23. 오후 3:33:55">2021-05-23</time></span><span class="level-item"><a class="link-muted" href="/categories/Study/">Study</a><span> / </span><a class="link-muted" href="/categories/Study/Do-it-JS/">Do it JS</a></span></div></div><h1 class="title is-3 is-size-4-mobile">(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기</h1><div class="content"><p><strong>Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편</strong>을 읽고, 공부하고, 정리한 글<br><a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.easyspub.co.kr/20_Menu/BookView/A001/295/PUB">책 정보</a></p>
+<span id="more"></span>
+
+<blockquote>
+<p>공부한 내용을 정리하기 위한 목적의 글입니다.<br>정확하고 자세한 내용 확인을 위해서 책을 구입하셔서 공부하시는 것을 권장합니다.😀</p>
+</blockquote>
+<h2 id="💛-개발-환경-준비하기"><a href="#💛-개발-환경-준비하기" class="headerlink" title="💛 개발 환경 준비하기"></a>💛 개발 환경 준비하기</h2><p>➡️ 크롬 브라우저 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.google.com/chrome/?brand=BNSD&gclid=CjwKCAjw-qeFBhAsEiwA2G7Nl8lHXbwPgiu_fBG7RXnS7y8vSEeElJF7EIU8mvu5t094K1riqRvegBoCWJUQAvD_BwE&gclsrc=aw.ds">(다운로드 링크)</a></p>
+<p>➡️ 비주얼 스튜디오 코드 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://code.visualstudio.com/">(다운로드 링크)</a></p>
+<h2 id="💛-비주얼-스튜디오-코드와-인사하기"><a href="#💛-비주얼-스튜디오-코드와-인사하기" class="headerlink" title="💛 비주얼 스튜디오 코드와 인사하기"></a>💛 비주얼 스튜디오 코드와 인사하기</h2><p><em>자료실의 실습 파일 이용</em></p>
+<h3 id="라이브-서버-확장-기능-사용하기"><a href="#라이브-서버-확장-기능-사용하기" class="headerlink" title="라이브 서버 확장 기능 사용하기"></a>라이브 서버 확장 기능 사용하기</h3><p>라이브 서버 확장 기능을 사용하면 작성한 소스를 웹 브라우저에서 바로 확인할 수 있다.</p>
+<h2 id="💛-자바-스크립트-소스-작성하고-실행하기"><a href="#💛-자바-스크립트-소스-작성하고-실행하기" class="headerlink" title="💛 자바 스크립트 소스 작성하고 실행하기"></a>💛 자바 스크립트 소스 작성하고 실행하기</h2><h3 id="HTML-문서-안에-자바스크립트-소스-작성하기"><a href="#HTML-문서-안에-자바스크립트-소스-작성하기" class="headerlink" title="HTML 문서 안에 자바스크립트 소스 작성하기"></a>HTML 문서 안에 자바스크립트 소스 작성하기</h3><p>HTML 문서 내부에 자바스크립트를 작성하는 방법은 <code>&lt;script&gt;</code> 태그 안에 자바스크립트 소스를 작성하는 것이다.</p>
+<p><strong>규칙</strong></p>
+<ul>
+<li><code>&lt;script&gt;</code> 태그는 HTML 문서 어디에도 위치할 수 있다.</li>
+<li><code>&lt;script&gt;</code> 한개의 문서에서 여러개 사용해도 된다.</li>
+<li><code>&lt;script&gt;</code> 태그가 삽입된 위치에서 소스가 실행된다.</li>
+</ul>
+<p><code>&lt;script&gt;</code> 태그 위치는 제한이 없지만 삽입된 위치에서 소스가 실행되기 때문에 위치를 신경써줘야 한다. 하지만 매번 위치를 신경써주는 것은 번거롭기 때문에 보통 HTML 문서의 끝 부분인 <code>&lt;/body&gt;</code> 태그 앞 부분에 <code>&lt;script&gt;</code> 태그를 삽입한다.</p>
+<h3 id="외부-스크립트-파일-연결하기"><a href="#외부-스크립트-파일-연결하기" class="headerlink" title="외부 스크립트 파일 연결하기"></a>외부 스크립트 파일 연결하기</h3><p>자바스크립트 소스를 따로 작성하여 HTML 문서에 연결하는 것을 ‘외부 스크립트 파일을 연결한다.’ 라고 한다.</p>
+<p>HTML 문서에 자바스크립트 소스를 작성하면 한 눈에 모든 내용을 확인할 수 있다는 장점이 있지만 규모가 큰 프로젝트에서 같은 동작을 하는 자바스크립트 코드를 여러개의 HTML 문서에서 사용할 때와 같은 경우 처럼 많은 경우에서는 자바스크립트 소스를 따로 작성하는 편이 더 편리하므로 보통은 따로 작성하는 방법을 많이 사용한다.</p>
+<p><code>&lt;script src=&quot;js/change.js&quot;&gt;&lt;/script&gt;</code></p>
+<h2 id="💛-나의-첫-번째-자바스크립트-프로그램"><a href="#💛-나의-첫-번째-자바스크립트-프로그램" class="headerlink" title="💛 나의 첫 번째 자바스크립트 프로그램"></a>💛 나의 첫 번째 자바스크립트 프로그램</h2><p><em>자료실의 실습 파일 이용</em></p>
+<h3 id="크롬-브라우저에서-프로그램-소스-확인하기"><a href="#크롬-브라우저에서-프로그램-소스-확인하기" class="headerlink" title="크롬 브라우저에서 프로그램 소스 확인하기"></a>크롬 브라우저에서 프로그램 소스 확인하기</h3><p>크롬 브라우저 화면에서 필요한 요소에 마우스 포인터를 올려두고 마우스 오른쪽 클릭 -&gt; [검사] 를 클릭하면 개발자 도구 화면의 Elements 탭이 출력된다. 그곳에서 자신이 작성한 소스를 확인할 수 있다.</p>
+<h2 id="💛-자바스크립트의-입력과-출력"><a href="#💛-자바스크립트의-입력과-출력" class="headerlink" title="💛 자바스크립트의 입력과 출력"></a>💛 자바스크립트의 입력과 출력</h2><h3 id="크롬-브라우저의-콘솔-도구와-함께-공부하기"><a href="#크롬-브라우저의-콘솔-도구와-함께-공부하기" class="headerlink" title="크롬 브라우저의 콘솔 도구와 함께 공부하기"></a>크롬 브라우저의 콘솔 도구와 함께 공부하기</h3><ol>
+<li><p>콘솔 사용하기</p>
+<ol>
+<li><p>주소창에 “about:blank”입력 -&gt; cmd + option + j</p>
+<p><img src="/imgs/DO-it-JS-2_chrome_console.png" alt="크롬 브라우저에서 콘솔 창을 연 화면"></p>
+</li>
+<li><p><code>undefined</code>라고 출력되는 것은 콘솔 창에서 결과를 표시할 때에 특별히 표시할 값이 없을 경우이다.</p>
+<p><img src="/imgs/DO-it-JS-2_chrome_console2.png" alt="콘솔 창에 코드를 입력한 화면"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="사용자-입력값-받기-prompt-함수"><a href="#사용자-입력값-받기-prompt-함수" class="headerlink" title="사용자 입력값 받기 - prompt() 함수"></a>사용자 입력값 받기 - prompt() 함수</h3><p>사용자에게 값을 입력받을 때 가장 쉽게 사용할 수 있는 함수가 <code>prompt()</code> 함수이다.</p>
+<p><code>prompt()</code> 함수를 실행하면 입력할 수 있는 팝업이 화면에 출력하고, 그 창을 통해서 입력한 내용을 콘솔에 출력한다.<br><img src="/imgs/DO-it-JS-2_prompt1.png" alt="prompt() 함수를 실행한 화면"></p>
+<p><img src="/imgs/DO-it-JS-2_prompt2.png" alt="prompt() 함수를 통해서 입력한 내용이 콘솔에 출력된 화면"></p>
+<p>( ) 안에 원하는 문장을 입력하면 프롬프트 창에 그 문장을 표시할 수 있다.</p>
+<p><img src="/imgs/DO-it-JS-2_prompt3.png" alt="프롬프트 창에 문장을 출력한 화면"></p>
+<p><code>prompt(&quot;안내 문장&quot;, &quot;기본 값&quot;)</code> 이렇게 코드를 작성하면 프롬프트 창의 텍스트 필드 안에 기본 값을 표시할 수도 있다.</p>
+<p><img src="/imgs/DO-it-JS-2_prompt4.png" alt="프롬프트창의 텍스트 필드에 기본 값을 표시한 화면"></p>
+<h3 id="알림-창으로-출력하기-alert-함수"><a href="#알림-창으로-출력하기-alert-함수" class="headerlink" title="알림 창으로 출력하기 - alert() 함수"></a>알림 창으로 출력하기 - alert() 함수</h3><p>웹 브라우저에서 간단한 알림을 표시하려고 할 때 <code>alert()</code> 함수를 사용한다.</p>
+<p><img src="/imgs/DO-it-JS-2_alert.png" alt="alert() 함수를 이용하여 화면에 알림을 표시한 화면"></p>
+<h3 id="웹-브라우저-화면에-출력하기-document-write-함수"><a href="#웹-브라우저-화면에-출력하기-document-write-함수" class="headerlink" title="웹 브라우저 화면에 출력하기 - document.write() 함수"></a>웹 브라우저 화면에 출력하기 - document.write() 함수</h3><p><code>document.write()</code> 함수는 괄호 안의 내용을 브라우저 화면에 표시하는 역할을 한다.</p>
+<p><strong>예제)</strong> 나이를 입력받아 웹 브라우저에 출력하는 소스를 작성하시오.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = prompt(<span class="string">&quot;나이를 입력하세요&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.write(age);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/imgs/DO-it-JS-2_document_write1.png" alt="prompt()를 통해서 나이를 입력받는 화면"></p>
+<p><img src="/imgs/DO-it-JS-2_document_write2.png" alt="document.write()를 이용하여 나이를 화면에 출력하는 화면"></p>
+<h3 id="콘솔에-출력하기-console-log-함수"><a href="#콘솔에-출력하기-console-log-함수" class="headerlink" title="콘솔에 출력하기 - console.log() 함수"></a>콘솔에 출력하기 - console.log() 함수</h3><p><code>console.log()</code> 함수를 사용하면 document.write() 함수와는 달리 괄호 안의 내용이 콘솔 창에 출력된다.</p>
+<p><strong>예제)</strong> 아까 입력받은 나이를 콘솔에 출력하는 소스를 작성하시오.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(age);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/imgs/DO-it-JS-2_console_log.png" alt="입력받았던 나이를 console.log() 함수를 사용하여 콘솔에 출력하는 화면"></p>
+<h3 id="크롬-브라우저-콘솔로-오류-찾아내기"><a href="#크롬-브라우저-콘솔로-오류-찾아내기" class="headerlink" title="크롬 브라우저 콘솔로 오류 찾아내기"></a>크롬 브라우저 콘솔로 오류 찾아내기</h3><p>콘솔 창에는 오류 내용이 표시되기 때문에 자바스크립트 소스의 오류를 발견하는데에 도움이 된다.</p>
+<h2 id="💛-자바스크립트-소스를-작성할-때-지켜야-할-규칙"><a href="#💛-자바스크립트-소스를-작성할-때-지켜야-할-규칙" class="headerlink" title="💛 자바스크립트 소스를 작성할 때 지켜야 할 규칙"></a>💛 자바스크립트 소스를 작성할 때 지켜야 할 규칙</h2><ol>
+<li><p>대소문자를 구별하여 소스를 다르게 작성한다.</p>
+</li>
+<li><p>들여쓰는 습관을 들인다.</p>
+<p>자바스크립트 인터프리터는 들여쓰기를 신경쓰지 않지만 가독성을 위해서는 들여쓰는 것이 좋다.</p>
+</li>
+<li><p>세미콜론(;)으로 문장을 구분한다.</p>
+<p>세미콜론의 존재 여부가 소스의 실행에는 영향을 주지 않지만 실수에 대한 오류를 예방하기 위해서는 세미콜론으로 문장의 끝을 표시해주는 것이 좋다.</p>
+</li>
+<li><p>주석 방법</p>
+<ul>
+<li>한줄 주석 <code>//</code></li>
+<li>여러 줄 주석 <code>/*   */</code></li>
+</ul>
+</li>
+<li><p>식별자는 정해진 규칙을 지켜 작성한다.</p>
+<p>식별자란 변수, 함수, 속성 등을 구별하기 위해 이름 붙이는 특정 단어를 의미한다.</p>
+<p>식별자의 첫번째 글자는 문자, 언더바(_), 달러기호($)로 시작해야 한다.</p>
+</li>
+<li><p>예약어는 식별자로 사용할 수 없다.</p>
+<p>예약어란 자바스크립트에 먼저 등록된 요소이다. </p>
+<p><strong>예약어 예)</strong></p>
+<ul>
+<li>arguments</li>
+<li>breake</li>
+<li>case</li>
+<li>continue</li>
+<li>default</li>
+<li>if</li>
+<li>else</li>
+<li>true</li>
+<li>…</li>
+</ul>
+<p>더 많은 예약어는 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3schools.com/js/js_reserved.asp">여기</a>에서 확인할 수 있다.</p>
+</li>
+</ol>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Javascript/">Javascript</a><a class="link-muted mr-2" rel="tag" href="/tags/StudyWithBook/">StudyWithBook</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/05/22/DO-it-JS-1/"><span class="level-item">(Do it! 자바스크립트) Chapter 1. 안녕? 자바스크립트!</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><script src="https://utteranc.es/client.js" repo="yoouyeon/blog-comment" issue-term="title" theme="github-light" crossorigin="anonymous" async></script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#💛-개발-환경-준비하기"><span class="level-left"><span class="level-item">1</span><span class="level-item">💛 개발 환경 준비하기</span></span></a></li><li><a class="level is-mobile" href="#💛-비주얼-스튜디오-코드와-인사하기"><span class="level-left"><span class="level-item">2</span><span class="level-item">💛 비주얼 스튜디오 코드와 인사하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#라이브-서버-확장-기능-사용하기"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">라이브 서버 확장 기능 사용하기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#💛-자바-스크립트-소스-작성하고-실행하기"><span class="level-left"><span class="level-item">3</span><span class="level-item">💛 자바 스크립트 소스 작성하고 실행하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#HTML-문서-안에-자바스크립트-소스-작성하기"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">HTML 문서 안에 자바스크립트 소스 작성하기</span></span></a></li><li><a class="level is-mobile" href="#외부-스크립트-파일-연결하기"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">외부 스크립트 파일 연결하기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#💛-나의-첫-번째-자바스크립트-프로그램"><span class="level-left"><span class="level-item">4</span><span class="level-item">💛 나의 첫 번째 자바스크립트 프로그램</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#크롬-브라우저에서-프로그램-소스-확인하기"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">크롬 브라우저에서 프로그램 소스 확인하기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#💛-자바스크립트의-입력과-출력"><span class="level-left"><span class="level-item">5</span><span class="level-item">💛 자바스크립트의 입력과 출력</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#크롬-브라우저의-콘솔-도구와-함께-공부하기"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">크롬 브라우저의 콘솔 도구와 함께 공부하기</span></span></a></li><li><a class="level is-mobile" href="#사용자-입력값-받기-prompt-함수"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">사용자 입력값 받기 - prompt() 함수</span></span></a></li><li><a class="level is-mobile" href="#알림-창으로-출력하기-alert-함수"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">알림 창으로 출력하기 - alert() 함수</span></span></a></li><li><a class="level is-mobile" href="#웹-브라우저-화면에-출력하기-document-write-함수"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">웹 브라우저 화면에 출력하기 - document.write() 함수</span></span></a></li><li><a class="level is-mobile" href="#콘솔에-출력하기-console-log-함수"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">콘솔에 출력하기 - console.log() 함수</span></span></a></li><li><a class="level is-mobile" href="#크롬-브라우저-콘솔로-오류-찾아내기"><span class="level-left"><span class="level-item">5.6</span><span class="level-item">크롬 브라우저 콘솔로 오류 찾아내기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#💛-자바스크립트-소스를-작성할-때-지켜야-할-규칙"><span class="level-left"><span class="level-item">6</span><span class="level-item">💛 자바스크립트 소스를 작성할 때 지켜야 할 규칙</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpeg" alt="Yoou"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Yoou</p><p class="is-size-6 is-block">나는야 개발자</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seongnam, Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">9</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/42-Seoul/"><span class="level-start"><span class="level-item">42 Seoul</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/42-Seoul/42-Cursus/"><span class="level-start"><span class="level-item">42 Cursus</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/42-Seoul/La-piscine/"><span class="level-start"><span class="level-item">La piscine</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Daily-Coding/"><span class="level-start"><span class="level-item">Daily Coding</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul><li><a class="level is-mobile" href="/categories/Daily-Coding/Programmers/"><span class="level-start"><span class="level-item">Programmers</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Study/"><span class="level-start"><span class="level-item">Study</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Study/Do-it-JS/"><span class="level-start"><span class="level-item">Do it JS</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-23T06:33:55.000Z">2021-05-23</time></p><p class="title"><a href="/2021/05/23/DO-it-JS-2/">(Do it! 자바스크립트) Chapter 2. 자바스크립트와 친해지기</a></p><p class="categories"><a href="/categories/Study/">Study</a> / <a href="/categories/Study/Do-it-JS/">Do it JS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-21T15:54:58.000Z">2021-05-22</time></p><p class="title"><a href="/2021/05/22/DO-it-JS-1/">(Do it! 자바스크립트) Chapter 1. 안녕? 자바스크립트!</a></p><p class="categories"><a href="/categories/Study/">Study</a> / <a href="/categories/Study/Do-it-JS/">Do it JS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-13T16:32:41.000Z">2021-05-14</time></p><p class="title"><a href="/2021/05/14/Libft-2/">Libft (2)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a> / <a href="/categories/42-Seoul/42-Cursus/">42 Cursus</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-05-11T03:30:52.000Z">2021-05-11</time></p><p class="title"><a href="/2021/05/11/Libft-1/">Libft (1)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a> / <a href="/categories/42-Seoul/42-Cursus/">42 Cursus</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2021-04-23T11:38:49.000Z">2021-04-23</time></p><p class="title"><a href="/2021/04/23/42-seoul-la-piscine-review-3/">🏊‍♀️ 42서울 라피신 후기 (3)</a></p><p class="categories"><a href="/categories/42-Seoul/">42 Seoul</a> / <a href="/categories/42-Seoul/La-piscine/">La piscine</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Yoou&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 Yoou</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoouyeon"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
