@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://yoouyeon.github.io/2021/06/24/2021-1st-semester-retrospective/</loc>
+        <lastmod>2021-06-24T15:39:19.773Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoouyeon.github.io/2021/05/22/DO-it-JS-1/</loc>
+        <lastmod>2021-06-24T15:35:19.894Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoouyeon.github.io/2021/05/27/DO-it-JS-6/</loc>
+        <lastmod>2021-06-02T17:09:52.206Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yoouyeon.github.io/2021/05/25/DO-it-JS-5/</loc>
         <lastmod>2021-05-25T14:45:41.777Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,14 +67,6 @@
     <url>
         <loc>https://yoouyeon.github.io/2021/04/01/programmers-1845/</loc>
         <lastmod>2021-05-24T17:50:25.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yoouyeon.github.io/2021/05/22/DO-it-JS-1/</loc>
-        <lastmod>2021-05-24T17:24:04.823Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
